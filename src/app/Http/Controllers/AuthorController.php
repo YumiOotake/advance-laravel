@@ -10,7 +10,9 @@ class AuthorController extends Controller
 {
     public function index()
     {
-        $authors = Author::all();
+        // $authors = Author::all();
+        // $authors = Author::simplePaginate(4);
+        $authors = Author::Paginate(4);
         // dd($authors);
         return view('index', ['authors' => $authors]); #View 側で $authors という変数が使える
     }
